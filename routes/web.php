@@ -7,7 +7,12 @@ use App\Http\Controllers\LoginUserController;
 
 use Illuminate\Support\Facades\Route;
 
-
+Route::get('test', function () {
+    dispatch(function () {
+        logger('hello from the queue!');
+    });
+    return 'Done';
+});
 
 Route::view('/', 'home');
 Route::view('contact', 'contact');
